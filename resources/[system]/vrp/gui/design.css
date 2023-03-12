@@ -1,0 +1,342 @@
+/* Linha 157 do survival.lua 
+SendNUIMessage({ deathtext = "<h1>NOCAUTEADO</h1> AGUARDE <color>"..timeDeath.." SEGUNDOS...</color>" })
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+}
+
+.console {
+    color: #c4c3ca;
+    background: rgba(29, 29, 29, .80);
+}
+
+.wprompt {
+    color: #c4c3ca;
+    width: 600px;
+    height: 150px;
+    display: flex;
+    border-radius: 3px;
+    position: absolute;
+    padding: 10px 15px;
+    font-family: "Poppins", sans-serif;
+    flex-direction: column;
+    background-color: rgba(29, 29, 29, .75);
+    background-image: url("https://www.llac.adv.br/wp-content/uploads/2018/07/bg-dot.png");
+}
+
+.wprompt h1 {
+    font-size: 13px;
+    font-weight: 300;
+    padding: 7px 0 12px 5px;
+}
+
+.wprompt textarea {
+    flex: 1;
+    color: #c4c3ca;
+    width: 100%;
+    resize: none;
+    padding: 10px;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none !important;
+    background: rgba(29, 29, 29, .80);
+    box-shadow: 0 4px 8px 0 rgb(29, 29, 29, .20);
+}
+
+.wprompt textarea:focus {
+    outline: none !important;
+}
+
+.wprompt .help {
+    font-size: 12px;
+    padding: 12px 0 7px 5px;
+}
+
+.requestManager {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#NotifyBackground {
+    color: #c4c3ca;
+    float: left;
+    width: 320px;
+    min-height: 100px;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 20px;
+    margin: 10px;
+    border-radius: 6px;
+    font-family: "Poppins", sans-serif;
+    background: rgba(29, 29, 29, .80);
+    box-shadow: 0 4px 8px 0 rgb(29, 29, 29, .20);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#NotifyBackground .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#NotifyBackground b {
+    color: #c4c3ca;
+    font-weight: 300;
+}
+
+#deathDiv {
+    width: 100%;
+    display: none;
+    height: 100%;
+    position: fixed;
+    /*display: flex;*/
+    align-content: center;
+    align-items: center;
+    background-color: rgba(29, 29, 29, .75);
+}
+
+#deathDiv h1 {
+    font-size: 60px;
+}
+
+#deathText {
+    width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: center;
+    color: #c4c3ca;
+    font-family: "Poppins", sans-serif;
+}
+
+#deathText color {
+    color: #2e6e4c;
+    filter: drop-shadow(0px 0px 2px rgba(0, 255, 21, 0.6));
+}
+
+#deathText color2 {
+    color: #bd2e2e;
+}
+
+#deathText i {
+    font-size: 13px;
+    font-style: normal;
+    letter-spacing: .5px;
+}
+
+#NotifyText {
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+#NotifyY,
+#NotifyU {
+    color: #c4c3ca;
+    padding: 12px 15px;
+    border-radius: 4px;
+    font-size: 25px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#NotifyY {
+    background: #2ecc71;
+    box-shadow: 0 4px 8px 0 rgb(46, 204, 113, .20);
+}
+
+#NotifyU {
+    background: #e74c3c;
+    box-shadow: 0 4px 8px 0 rgb(231, 76, 60, .20);
+}
+
+#NotifyLeg {
+    white-space: nowrap;
+    width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    padding-left: 15px;
+}
+
+.grow-corners::before,
+.grow-corners::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-color: #c4c3ca;
+    filter: drop-shadow(0px 0px 2px rgb(196, 195, 202));
+    border-style: solid;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.grow-corners.bottom-corners::before {
+    border-width: 0 0 3px 3px;
+    border-radius: 2px;
+    left: 5px;
+    bottom: 5px;
+}
+
+.grow-corners.bottom-corners::after {
+    border-width: 0 3px 3px 0;
+    border-radius: 2px;
+    right: 5px;
+    bottom: 5px;
+}
+
+.grow-corners.top-corners::before {
+    border-width: 3px 0 0 3px;
+    border-radius: 2px;
+    left: 5px;
+    top: 5px;
+}
+
+.grow-corners.top-corners::after {
+    border-width: 3px 3px 0 0;
+    border-radius: 2px;
+    right: 5px;
+    top: 5px;
+}
+
+.grow-corners::before,
+.grow-corners::after {
+    animation: card 5s ease-out infinite;
+}
+
+#identityDiv {
+    width: 100%;
+    display: none;
+    height: 100%;
+    position: fixed;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.identity {
+    color: #c4c3ca;
+    max-width: 345px;
+    border-radius: 4px;
+    padding: 20px;
+    background: rgba(29, 29, 29, .80);
+    box-shadow: 0 4px 8px 0 rgb(29, 29, 29, .20);
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.identity .doppler {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.identity .doppler div {
+    width: 100%;
+    height: 100%;
+    border-color: #2e6e4c;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    opacity: 0;
+    z-index: 1;
+    -webkit-box-shadow: 0 0 8px 0 #2e6e4c;
+    box-shadow: 0 0 8px 0 #2e6e4c;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    animation: doppler 2s linear 0s infinite;
+    -webkit-animation: doppler 2s linear 0s infinite;
+}
+
+.identity .card {
+    padding: 10px;
+    border: 3px solid #2e6e4c;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+
+.identity .card .name {
+    color: #2e6e4c;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    padding: 5px 10px;
+    font-size: 20px;
+}
+
+.identityInfo {
+    color: #9a9a9c;
+    font-size: 11px;
+    line-height: 15px;
+    min-width: 120px;
+    text-align: left;
+    margin: 5px;
+}
+
+.identityInfo span {
+    color: #c4c3ca;
+    font-size: 13px;
+    letter-spacing: .5px;
+    font-family: "Poppins", sans-serif;
+}
+
+@keyframes doppler {
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        width: 91%;
+        height: 85%;
+    }
+}
+
+@keyframes card {
+    0% {
+        width: 0%;
+        height: 0%;
+    }
+    50% {
+        width: 35%;
+        height: 25%;
+    }
+    100% {
+        width: 0%;
+        height: 0%;
+    }
+}

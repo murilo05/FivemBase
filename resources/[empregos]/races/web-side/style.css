@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+html,body {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	overflow: hidden;
+	background: transparent;
+    font-family: "Poppins", sans-serif;
+	background-repeat: no-repeat;
+	background-size: cover;
+}	
+
+* {
+	overflow: hidden;
+	user-select: none;
+	box-sizing: border-box;
+}
+
+#displayRunners {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: none;
+	justify-content: center;
+}
+#displayRunners .painel{
+	display: flex;
+	background-color: rgba(196, 195, 202, .95);
+    box-shadow: 0 4px 8px 0 rgb(29, 29, 29, .20);
+	margin: 10px;
+	padding: 0 10px;
+	border-radius: 5px;
+	color:#1d1d1d;
+}
+#displayRunners .painel > div{
+	padding: 4px 20px;
+	position: relative;
+	
+}
+#displayRunners .painel .icon{
+	position: absolute;
+	font-size: 20px;
+	top:  calc(100% - 40px);
+	left: 0;
+	opacity: .35;
+	transform: rotate(-45deg);
+}
+#rank{
+	margin: 5px;
+}
+.ranking{
+	margin-right: 100px;
+	height: 100%;
+	display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    align-content: center;
+}
+#displayRanking {
+	color: #1d1d1d;
+	width: 430px;
+	margin: 10px;
+	display: none;
+	flex-direction: column;
+	padding: 5px;
+	border-radius: 5px;
+    background-color: rgba(196, 195, 202, .75);
+    box-shadow: 0 4px 8px 0 rgb(29, 29, 29, .20);
+}
+
+.header{
+	text-align: center;
+}
+.header h2{
+	margin: 10px 0 0 0;
+	font-size: 30px;
+}
+.header p{
+	font-size: 12px;
+	margin: 0 0 10px 0;
+}
+#raceButtom {
+	top: 10px;
+	right: 10px;
+	font-size: 12px;
+	color: #1d1d1d;
+	width: 100%;
+	font-weight: 500;
+	padding: 8px 0;
+	text-align: center;
+}
+key {
+	color: #2e6e4c;
+	padding: 2px 4px;
+	border-radius: 4px;
+	border: 1px solid #2e6e4c;
+    filter: drop-shadow(0px 0px 2px rgba(21, 21, 21, 0.6));
+	margin-right: 2px;
+}
+
+
+.raceLine {
+	margin: 0 8px 8px 8px;
+	width: calc(100% - 14px);
+	height: 40px;
+	border-radius:5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    box-shadow: 0 4px 8px 0 rgb(29, 29, 29, .20);
+    background-color: rgba(196, 195, 202, .35);
+	position: relative;
+	
+}
+.raceLine:nth-child(1){
+	background-color: #2e6e4c;
+	color:#1d1d1d;
+	z-index: 3;
+}
+.raceLine:nth-child(1)::before{     
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f091";
+	position: absolute;
+	opacity: .3;
+	left: -5px;
+	bottom: -5px;
+	font-size: 35px;
+	transform: rotate(40deg);
+	z-index: 1;
+}
+.raceLine:nth-child(2){
+	background-color: #888888;
+	color:#1d1d1d;
+}
+.raceLine:nth-child(3){
+	background-color: #127c04;
+	color:#1d1d1d;
+}
+
+.racePosition {
+	width: 40px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #1d1d1d;
+	text-align: center;
+	font-weight: 800;
+	z-index: 2;
+}
+
+.raceName {
+	width: 190px;
+	padding-left: 2px;   
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+	font-weight: 600;
+}
+
+.raceVehicle {
+	width: 135px;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.racePoints {
+	width: 100px;
+}

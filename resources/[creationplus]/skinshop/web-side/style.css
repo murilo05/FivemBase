@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+::selection {
+    background: transparent;
+}
+
+::-moz-selection {
+    background: transparent;
+}
+
+.container {
+    height: 100vh;
+}
+
+::-webkit-inner-spin-button {
+    display: none;
+}
+
+.clothing-menu-container {
+    top: 0;
+    right: 0;
+    margin: 0;
+    width: 350px;
+    display: none;
+    height: 100vh;
+    position: absolute;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, .85), transparent);
+}
+
+.clothing-menu-header {
+    top: 10px;
+    right: 350px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.clothing-menu-header-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    margin: 5px 10px;
+    border-radius: 4px;
+    color: #c4c3ca;
+    position: relative;
+    text-align: center;
+    background: rgba(29, 29, 29, .80);
+    box-shadow: 0 4px 8px 0 rgb(29, 29, 29, .20);
+    transition: all 0.1s linear;
+}
+
+.clothing-menu-header-btn:hover {
+    color: #1d1d1d;
+    background: #2e6e4c;
+}
+
+.clothing-menu-header-btn:hover p {
+    color: #1d1d1d;
+}
+
+.clothing-menu-header-btn i {
+    font-size: 20px;
+}
+
+.clothing-menu-header-btn p {
+    color: #2e6e4c;
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 5px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+.selected {
+    color: #1d1d1d;
+    background: #2e6e4c;
+}
+
+.selected p {
+    color: #1d1d1d;
+}
+
+.clothing-menu-header-cameras {
+    display: flex;
+}
+
+.clothing-menu-header-camera-btn {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #c4c3ca;
+    position: relative;
+    text-align: center;
+    border-radius: 4px;
+    margin: 10px;
+    background: rgba(29, 29, 29, .80);
+    box-shadow: 0 4px 8px 0 rgb(29, 29, 29, .20);
+    filter: drop-shadow(0px 0px 2px rgba(29, 29, 29, 0.6));
+    transition: all 0.1s linear;
+}
+
+.clothing-menu-header-camera-btn i {
+    font-size: 20px;
+}
+
+.clothing-menu-header-camera-btn p {
+    color: #2e6e4c;
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 5px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+.clothing-menu-header-camera-btn:hover {
+    color: #1d1d1d;
+    background: #2e6e4c;
+}
+
+.clothing-menu-header-camera-btn:hover p {
+    color: #1d1d1d;
+}
+
+.selected-cam {
+    color: #1d1d1d;
+    background: #2e6e4c;
+}
+
+.selected-cam p {
+    color: #1d1d1d;
+}
+
+.clothing-menu-character-container,
+.clothing-menu-accessoires-container {
+    display: none;
+    margin: 0 auto;
+    height: 82vh;
+    width: 95%;
+    overflow-y: scroll !important;
+}
+
+.clothing-menu-option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-top: 28px;
+    height: 100px;
+    background: rgba(29, 29, 29, .80);
+    box-shadow: 0 4px 8px 0 rgb(29, 29, 29, .20);
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.clothing-menu-option-header {
+    position: absolute;
+    top: 0;
+    width: calc(100% - 20px);
+    color: #1d1d1d;
+    background: #2e6e4c;
+    border-radius: 4px 4px 0 0;
+    padding: 8px 10px;
+}
+
+.clothing-menu-option-header>p {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.clothing-menu-option-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+    height: calc(100% - 10px);
+}
+
+.clothing-menu-option-item-left {
+    padding: 10px;
+    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1d1d1d;
+    filter: drop-shadow(0px 0px 2px rgba(29, 29, 29, 0.6));
+    text-align: center;
+    transition: all 0.1s linear;
+    background: #c4c3ca;
+    border-radius: 50%;
+}
+
+.clothing-menu-option-item-left:hover {
+    opacity: .6;
+}
+
+.clothing-menu-option-item-right {
+    padding: 10px;
+    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1d1d1d;
+    filter: drop-shadow(0px 0px 2px rgba(29, 29, 29, 0.6));
+    text-align: center;
+    transition: all 0.1s linear;
+    background: #c4c3ca;
+    border-radius: 50%;
+}
+
+.clothing-menu-option-item-right:hover {
+    opacity: .6;
+}
+
+.item-number {
+    width: 46px;
+    height: 46px;
+    border: 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #c4c3ca;
+    outline: none;
+    padding: 0;
+    background: rgba(51, 51, 51, 0.4);
+    transition: all 0.1s linear;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.item-number:focus {
+    background: rgba(51, 51, 51, 0.8);
+}
+
+.clothing-menu-option-item-header {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 4px;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: .5px;
+    color: #c4c3ca;
+}
+
+.clothing-menu-option-item-header>p {
+    padding: 0;
+}
+
+.clothing-menu-option-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+}
+
+.clothing-menu-option-button {
+    width: 150px;
+    height: 50px;
+    border-radius: 4px;
+    background: #2e6e4c;
+    box-shadow: 0 4px 8px 0 rgba(43, 255, 0, 0.2);
+    color: #1d1d1d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s linear;
+}
+
+.clothing-menu-option-button:hover {
+    opacity: .6;
+}
+
+.clothing-menu-option-button>p {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #1d1d1d;
+    text-align: center;
+}
+
+.clothing-menu-option-button2 {
+    width: 150px;
+    height: 50px;
+    border-radius: 4px;
+    position: relative;
+    background: #1d1d1d;
+    box-shadow: 0 4px 8px 0 rgb(29, 29, 29, .20);
+    color: #2e6e4c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s linear;
+}
+
+.clothing-menu-option-button2:hover {
+    opacity: .6;
+}
+
+.clothing-menu-option-button2>p {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    filter: drop-shadow(0px 0px 2px rgba(29, 29, 29, 0.6));
+    color: #2e6e4c;
+    text-align: center;
+}

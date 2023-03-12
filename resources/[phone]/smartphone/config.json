@@ -1,0 +1,48 @@
+{
+  "token": "",
+  "client": {
+    "bankType": "fleeca",
+    "uploadServer": "https://ptb.discord.com/api/webhooks/1014956432543727616/acIupFGdNPe9NqvFDSP3E5k0DRWgC1h4yhAydvkTVs1mavLxvx7RhhBwXTIcsGWEOp7F",
+    "videoServer": "ws://IP DA HOST AQUI:8080/",
+    "case": "iphonexs",
+    "isAndroid": true,
+    "allowUnsafeURL": true,
+    "useGameClock": false,
+    "phone_template": "XXX-XXX",
+    "backgroundURL": "",
+    "db_driver": "oxmysql",
+    "disabledApps": [""]
+  },
+  "call_mode": "pma-voice",
+  "webhookURL": "https://ptb.discord.com/api/webhooks/1014956432543727616/acIupFGdNPe9NqvFDSP3E5k0DRWgC1h4yhAydvkTVs1mavLxvx7RhhBwXTIcsGWEOp7F",
+  "instagram_verify": "Verify",
+  "moderator": "Admin",
+  "item": "cellphone",
+  "apps": {
+    "calculator": "https://celularautenticacaofivem.xyz/imagens/calculator.webp",
+    "notes": "https://celularautenticacaofivem.xyz/imagens/notes.webp",
+    "settings": "https://celularautenticacaofivem.xyz/imagens/settings.webp",
+    "contacts": "https://celularautenticacaofivem.xyz/imagens/contacts.webp",
+    "sms": "https://celularautenticacaofivem.xyz/imagens/sms.webp",
+    "gallery": "https://celularautenticacaofivem.xyz/imagens/gallery.webp",
+    "phone": "https://celularautenticacaofivem.xyz/imagens/phone.webp",
+    "facetime": "https://celularautenticacaofivem.xyz/imagens/facetime.webp"
+  },
+  "services": [
+    {
+      "name": "Policia",
+      "number": "190",
+      "permission": "Police"
+    },
+    {
+      "name": "Paramédico",
+      "number": "192",
+      "permission": "Paramedic"
+    },
+    {
+      "name": "Mecânico",
+      "number": "0800 042",
+      "permission": "Mechanic"
+    }
+  ]
+}

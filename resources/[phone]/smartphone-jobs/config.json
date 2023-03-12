@@ -1,0 +1,16 @@
+{
+  "locale": "pt-BR",
+  "currency": "BRL",
+  "uber": {
+    "pricing": {
+      "base": 200,
+      "per_km": 75
+    },
+    "common_places": [
+      { "name": "Praça", "location": [156.9, -1012.25, 29.4] },
+      { "name": "Hospital", "location": [-475.29, -332.92, 42.33] },
+      { "name": "Departamento Policial", "location": [-1062.21, -843.61, 10.79] }
+    ],
+    "cancelable": 0
+  }
+} 

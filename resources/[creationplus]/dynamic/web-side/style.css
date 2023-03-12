@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+::selection {
+    background: transparent;
+}
+
+::-moz-selection {
+    background: transparent;
+}
+
+.container {
+    top: 15%;
+    right: 10%;
+    display: none;
+    position: absolute;
+}
+
+.btn {
+    color: #c4c3ca;
+    border: none;
+    outline: none;
+    display: flex;
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 0;
+    width: 250px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: transparent;
+    position: relative;
+    transition: .3s;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    box-shadow: 0 4px 8px 0 rgb(29, 29, 29, .20);
+}
+
+.btn:hover .title {
+    width: 100px;
+    background: #2e6e4c;
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.6));
+    color: #1d1d1d;
+    border-radius: 4px 0 0 4px;
+}
+
+.btn:hover .description {
+    color: #c4c3ca;
+    background: rgba(29, 29, 29, .85);
+}
+
+.title {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(29, 29, 29, .85);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    border-radius: 4px;
+    width: 240px;
+    height: 40px;
+    padding: 5px;
+    transition: .3s;
+    z-index: 2;
+}
+
+.description {
+    background-color: transparent;
+    color: transparent;
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    transition: .3s;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    padding-left: 114px;
+    z-index: 1;
+}
+
+.titles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(29, 29, 29, .85);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    border-radius: 4px;
+    width: 240px;
+    height: 40px;
+    padding: 5px;
+    transition: .3s;
+    z-index: 2;
+}
+
+#goback .titles {
+    background: #2e6e4c;
+    filter: drop-shadow(0px 0px 2px rgba(0, 80, 4, 0.6));
+    box-shadow: 0 4px 8px 0 rgba(0, 73, 0, 0.247);
+    color: #1d1d1d;
+}
+
+#goback:hover .titles,
+#goback:hover {
+    opacity: .8;
+    box-shadow: none;
+}
